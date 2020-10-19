@@ -50,6 +50,7 @@
             this.rdbMult = new System.Windows.Forms.RadioButton();
             this.rdbConjuga = new System.Windows.Forms.RadioButton();
             this.lbConjuga = new System.Windows.Forms.Label();
+            this.chkbSemiPlanoSuperior = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -261,11 +262,22 @@
             this.lbConjuga.Text = "Conjuga";
             this.lbConjuga.Visible = false;
             // 
+            // chkbSemiPlanoSuperior
+            // 
+            this.chkbSemiPlanoSuperior.AutoSize = true;
+            this.chkbSemiPlanoSuperior.Location = new System.Drawing.Point(755, 36);
+            this.chkbSemiPlanoSuperior.Name = "chkbSemiPlanoSuperior";
+            this.chkbSemiPlanoSuperior.Size = new System.Drawing.Size(174, 24);
+            this.chkbSemiPlanoSuperior.TabIndex = 4;
+            this.chkbSemiPlanoSuperior.Text = "Semiplano Superior";
+            this.chkbSemiPlanoSuperior.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1047, 450);
+            this.Controls.Add(this.chkbSemiPlanoSuperior);
             this.Controls.Add(this.rdbConjuga);
             this.Controls.Add(this.rdbMult);
             this.Controls.Add(this.rdbResta);
@@ -319,6 +331,7 @@
         private System.Windows.Forms.RadioButton rdbMult;
         private System.Windows.Forms.RadioButton rdbConjuga;
         private System.Windows.Forms.Label lbConjuga;
+        private System.Windows.Forms.CheckBox chkbSemiPlanoSuperior;
     }
 }
 

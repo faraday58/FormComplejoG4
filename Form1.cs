@@ -15,14 +15,39 @@ namespace FormComplejo
         {
             if (rdbSuma.Checked)
             {
-                float real = float.Parse(txtbCompReal1.Text);
-                float imaginaria = float.Parse(txtbCompImag1.Text);
-                Complejo c1 = new Complejo(real, imaginaria);
-                real = float.Parse(txtbCompReal2.Text);
-                imaginaria = float.Parse(txtbCompImag2.Text);
-                Complejo c2 = new Complejo(real, imaginaria);
-                Complejo c3 = c1 + c2;
-                lbResultado.Text = c3.ToString();
+                try
+                {
+                    float real = float.Parse(txtbCompReal1.Text);
+                    float imaginaria = float.Parse(txtbCompImag1.Text);
+                    if (chkbSemiPlanoSuperior.Checked && imaginaria < 0)
+                    {
+                        throw new ApplicationException("La parte imaginaria debe ser mayor o igual a cero");
+                    }
+                    Complejo c1 = new Complejo(real, imaginaria);
+                    real = float.Parse(txtbCompReal2.Text);
+                    imaginaria = float.Parse(txtbCompImag2.Text);
+                    Complejo c2 = new Complejo(real, imaginaria);
+                    Complejo c3 = c1 + c2;
+                    lbResultado.Text = c3.ToString();
+                    if( chkbSemiPlanoSuperior.Checked && imaginaria < 0   )
+                    {
+                        throw new ApplicationException("La parte imaginaria debe ser mayor o igual a cero");
+                    }
+                }
+                //Excepciones más específicas
+                catch(ApplicationException error)
+                {
+                    MessageBox.Show(error.Message);
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("Error, debes de ingresar un número ");
+                }
+                catch (Exception error)
+                {
+                    MessageBox.Show("Error: " + error.Message);
+                }
+                
             }
         }
 
